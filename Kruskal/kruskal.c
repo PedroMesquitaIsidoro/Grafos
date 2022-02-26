@@ -18,7 +18,7 @@ void kruskal(struct Grafo* grafo){
 
     struct subset* subsets = iniciar_subsets(vert);
 
-    qsort(grafo->aresta, grafo->num_Arestas, sizeof(grafo->aresta[0]), compare);
+    qsort(grafo->aresta, grafo->num_Arestas, sizeof(grafo->aresta[0]), compara);
     
     while (j < vert - 1) {
 
@@ -45,7 +45,7 @@ void kruskal(struct Grafo* grafo){
     }
     printf("Custo: %d\n",custo);
     return;
-};
+}
 
 int main(){
     struct Grafo* grafo = (struct Grafo*)(malloc(sizeof(struct Grafo)));
@@ -64,7 +64,7 @@ int main(){
     }
  
 
- 
+
     kruskal(grafo);
 
     return 0;
