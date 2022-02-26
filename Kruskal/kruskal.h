@@ -12,7 +12,7 @@ int encontrar(struct subset subsets[], int i){
         return i;
  
     return encontrar(subsets, subsets[i].parent);
-};
+}
 
 void fazer_uniao(struct subset subsets[], int v1, int v2){
 
@@ -28,11 +28,11 @@ void fazer_uniao(struct subset subsets[], int v1, int v2){
         subsets[raiz2].rank++;
     }
 
-};
+}
 
 struct subset* criar_subsets(int vert){
     return (struct subset*)malloc(vert * sizeof(struct subset));
-};
+}
 
 struct subset* iniciar_subsets(int vert){
 
@@ -44,11 +44,12 @@ struct subset* iniciar_subsets(int vert){
     }
 
     return subsets;
-};
+}
 
-int compare(const void *a, const void *b){
-  int *x = (int *)a;
-  int *y = (int *)b;
+int compara(const void *q, const void *w){
+    int *y = (int *)w;
+    int *x = (int *)q;
+
   
-  return x[2] > y[2];
-};
+  return y[2] < x[2];
+}
